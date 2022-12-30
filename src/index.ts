@@ -18,8 +18,6 @@ export interface Env {
 }
 const app = new Hono<{ Bindings: Env }>();
 
-app.get('/', (c) => c.text('Index'));
-
 app.post('/api/submit', SubmitEndpoint);
 app.post('/api/login', LoginEndpoint);
 app.post('/api/challenge', ChallengeEndpoint);
