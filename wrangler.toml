@@ -1,0 +1,21 @@
+name = "letterbox"
+main = "src/index.ts"
+compatibility_date = "2022-12-24"
+usage_model = "unbound"
+
+
+route = { pattern = "letterbox-api.cyberjake.xyz", custom_domain = true }
+
+vars = {LoginMinutes = 10}
+
+[[r2_buckets]]
+binding = 'R2'
+bucket_name = 'letterbox'
+preview_bucket_name = 'letter-box-dev'
+
+
+[[ d1_databases ]]
+binding = "DB"
+database_name = "letterbox"
+database_id = "bcf436ed-0881-47f0-9368-685604a2cda4"
+preview_database_id = "00498a48-1fdc-4fb6-a141-3feeb7a83f92"
