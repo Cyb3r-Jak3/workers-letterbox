@@ -1,4 +1,4 @@
-import { JSONResponse } from '@cyb3r-jak3/common';
+import { JSONErrorResponse, JSONResponse } from '@cyb3r-jak3/common';
 import { Context, Hono } from 'hono';
 import {
     LoginEndpoint,
@@ -17,6 +17,15 @@ export interface Env {
     SessionMinutes?: number;
 }
 const app = new Hono<{ Bindings: Env }>();
+
+app.use('*', async (c, next) => {
+    try {
+        await next();
+    } catch (error) {
+        console.error(`Uncaught error for URL ${c.req.url} - ${error}`);
+        return JSONErrorResponse('unhandled server exception');
+    }
+});
 
 app.post('/api/submit', SubmitEndpoint);
 app.post('/api/login', LoginEndpoint);

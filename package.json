@@ -17,8 +17,8 @@
     "scripts": {
         "dev": "wrangler dev --local --persist",
         "deploy": "wrangler publish",
-        "format": "prettier --write *.json src/**/*.ts",
-        "lint": "eslint --max-warnings=0 src && prettier --check *.json src/**/*.ts"
+        "format": "prettier --write *.json utils/**/*.ts src/**/*.ts",
+        "lint": "eslint --max-warnings=0 src utils && prettier --check *.json src/**/*.ts utils/**/*.ts"
     },
     "dependencies": {
         "@cyb3r-jak3/common": "^3.2.0",
