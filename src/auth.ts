@@ -121,6 +121,7 @@ export async function LoginEndpoint(c: Context): Promise<Response> {
         sameSite: 'Strict',
         path: '/api',
     });
+    console.log('Finished Login Endpoint');
     return c.res;
 }
 

@@ -1,4 +1,8 @@
-import { JSONErrorResponse, JSONResponse } from '@cyb3r-jak3/common';
+import {
+    JSONErrorResponse,
+    JSONResponse,
+    JSONContentHeader,
+} from '@cyb3r-jak3/common';
 import { Context, Hono } from 'hono';
 import {
     LoginEndpoint,
@@ -21,8 +25,20 @@ const app = new Hono<{ Bindings: Env }>();
 app.use('*', async (c, next) => {
     try {
         await next();
+        if (
+            c.res.headers.get('content-type') !== JSONContentHeader &&
+            c.res.status !== 404
+        ) {
+            console.error(
+                `Got non-JSON response for ${new URL(c.req.url).pathname} - ${
+                    c.res.status
+                } `
+            );
+        }
     } catch (error) {
-        console.error(`Uncaught error for URL ${c.req.url} - ${error}`);
+        console.error(
+            `Uncaught error for ${new URL(c.req.url).pathname} - ${error}`
+        );
         return JSONErrorResponse('unhandled server exception');
     }
 });
