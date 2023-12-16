@@ -10,7 +10,7 @@
     "dependencies": {
         "@cyb3r-jak3/common": "^3.3.0",
         "d1-orm": "^0.7.2",
-        "hono": "^2.7.1",
+        "hono": "^3.11.7",
         "openpgp": "^5.10.1",
         "random-word-slugs": "^0.1.6"
     },
