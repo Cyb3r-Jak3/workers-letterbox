@@ -3,12 +3,13 @@
     "version": "0.0.4",
     "scripts": {
         "dev": "wrangler dev --local --persist",
-        "deploy": "wrangler publish",
+        "deploy": "wrangler deploy",
         "format": "prettier --write *.json utils/**/*.ts src/**/*.ts",
         "lint": "eslint --max-warnings=0 src utils && prettier --check *.json src/**/*.ts utils/**/*.ts"
     },
     "dependencies": {
         "@cyb3r-jak3/common": "^3.3.0",
+        "@cyb3r-jak3/workers-common": "^5.4.1",
         "d1-orm": "^0.7.2",
         "hono": "^4.6.5",
         "openpgp": "^5.10.1",
