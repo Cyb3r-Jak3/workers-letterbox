@@ -11,7 +11,7 @@
         "@cyb3r-jak3/common": "^3.3.0",
         "@cyb3r-jak3/workers-common": "^5.4.1",
         "d1-orm": "^0.7.2",
-        "hono": "^4.6.5",
+        "hono": "^4.10.2",
         "openpgp": "^5.10.1",
         "random-word-slugs": "^0.1.6"
     },
