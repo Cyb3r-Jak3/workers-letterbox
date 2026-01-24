@@ -1,32 +1,42 @@
 {
     "name": "letterbox",
     "version": "0.0.4",
+    "type": "module",
     "scripts": {
-        "dev": "wrangler dev --local --persist",
+        "dev": "wrangler dev",
         "deploy": "wrangler deploy",
         "format": "prettier --write *.json utils/**/*.ts src/**/*.ts",
-        "lint": "eslint --max-warnings=0 src utils && prettier --check *.json src/**/*.ts utils/**/*.ts"
+        "lint": "eslint --max-warnings=0 src utils && prettier --check *.json src/**/*.ts utils/**/*.ts",
+        "drizzle:generate": "drizzle-kit generate",
+        "test": "vitest run --coverage"
     },
     "dependencies": {
-        "@cyb3r-jak3/common": "^3.3.0",
         "@cyb3r-jak3/workers-common": "^5.4.1",
-        "d1-orm": "^0.7.2",
-        "hono": "^4.6.5",
-        "openpgp": "^5.10.1",
-        "random-word-slugs": "^0.1.6"
+        "drizzle-orm": "^0.36.4",
+        "hono": "^4.7.10",
+        "openpgp": "^5.11.3",
+        "random-word-slugs": "^0.1.7"
     },
     "license": "MIT",
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20221111.1",
-        "@databases/split-sql-query": "^1.0.3",
-        "@databases/sql": "^3.2.0",
+        "@cloudflare/vitest-pool-workers": "^0.5.41",
+        "@cloudflare/workers-types": "^4.20250520.0",
+        "@databases/split-sql-query": "^1.0.4",
+        "@databases/sql": "^3.3.0",
+        "@eslint/eslintrc": "^3.3.1",
+        "@eslint/js": "^9.27.0",
         "@openpgp/web-stream-tools": "^0.0.13",
-        "@typescript-eslint/eslint-plugin": "^5.47.1",
-        "@typescript-eslint/parser": "^5.47.1",
-        "better-sqlite3": "^8.0.1",
-        "eslint": "^8.30.0",
+        "@types/node": "^22.15.20",
+        "@typescript-eslint/eslint-plugin": "^8.32.1",
+        "@typescript-eslint/parser": "^8.32.1",
+        "chanfana": "^2.8.0",
+        "drizzle-kit": "^0.28.1",
+        "eslint": "^9.27.0",
+        "globals": "^15.15.0",
         "prettier": "2.8.1",
-        "typescript": "^4.9.4",
-        "wrangler": "^3.19.0"
+        "tsx": "^4.19.4",
+        "typescript": "^4.9.5",
+        "vitest": "2.1.6",
+        "wrangler": "^4.60.0"
     }
 }
