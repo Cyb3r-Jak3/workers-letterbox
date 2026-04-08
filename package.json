@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@cyb3r-jak3/workers-common": "^5.4.1",
-        "drizzle-orm": "^0.36.4",
+        "drizzle-orm": "^0.45.2",
         "hono": "^4.7.10",
         "openpgp": "^5.11.3",
         "random-word-slugs": "^0.1.7"
